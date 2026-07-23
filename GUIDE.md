@@ -47,8 +47,8 @@ Get detailed information about a repository.
 **Usage:**
 
 ```
-Get repository info for Ares-Nguyen/Order-App
-Get repository info for Kinatico/kup-project-management
+Get repository info for octocat/Hello-World
+Get repository info for my-org/my-project
 ```
 
 **Parameters:**
@@ -68,7 +68,7 @@ List issues in a repository with filters.
 **Usage:**
 
 ```
-List open issues in Ares-Nguyen/Order-App
+List open issues in octocat/Hello-World
 Show closed issues with label "bug" in my-org/my-repo
 List issues assigned to @username
 ```
@@ -92,7 +92,7 @@ Get detailed information about a specific issue.
 **Usage:**
 
 ```
-Get details of issue #123 in Ares-Nguyen/Order-App
+Get details of issue #123 in octocat/Hello-World
 ```
 
 **Parameters:**
@@ -111,7 +111,7 @@ Create a new issue.
 **Usage:**
 
 ```
-Create a new issue with title "Fix login bug" in Ares-Nguyen/Order-App
+Create a new issue with title "Fix login bug" in octocat/Hello-World
 Create issue "Add dark mode" with label "enhancement" and assign to @developer
 ```
 
@@ -202,7 +202,7 @@ List issues with GitHub Project v2 field values (Status, Priority, Size...).
 **Usage:**
 
 ```
-Get issues of Ares-Nguyen with status In Progress in Kinatico/kup-project-management
+Get issues of octocat with status In Progress in my-org/my-project
 Show issues assigned to @dev with project status Done
 ```
 
@@ -224,7 +224,7 @@ List all comments on an issue or PR.
 **Usage:**
 
 ```
-List comments of issue #123 in Ares-Nguyen/Order-App
+List comments of issue #123 in octocat/Hello-World
 List comments on PR #45
 ```
 
@@ -246,7 +246,7 @@ Get detailed information about a specific comment by comment_id.
 **Usage:**
 
 ```
-Get details of comment #987654321 in Ares-Nguyen/Order-App
+Get details of comment #987654321 in octocat/Hello-World
 Get issue comment details for comment_id 123456
 ```
 
@@ -266,7 +266,7 @@ Get the list of Pull Requests linked in the Development section of the issue.
 **Usage:**
 
 ```
-Get PRs linked with issue #123 in Ares-Nguyen/Order-App
+Get PRs linked with issue #123 in octocat/Hello-World
 Get linked PRs for issue #456
 ```
 
@@ -546,7 +546,7 @@ List branches in a repository.
 **Usage:**
 
 ```
-List branches in Ares-Nguyen/Order-App
+List branches in octocat/Hello-World
 ```
 
 **Parameters:**
@@ -608,7 +608,7 @@ List commits.
 **Usage:**
 
 ```
-List the latest 10 commits in Ares-Nguyen/Order-App
+List the latest 10 commits in octocat/Hello-World
 Show commits on feature branch
 ```
 
@@ -629,7 +629,7 @@ Compare two commits, branches, or tags and get the detailed diff.
 **Usage:**
 
 ```
-Compare branch main with develop in Ares-Nguyen/Order-App
+Compare branch main with develop in octocat/Hello-World
 Get diff between v1.0.0 and v1.1.0
 Compare commit abc123 with def456
 ```
@@ -663,7 +663,7 @@ Read file content.
 **Usage:**
 
 ```
-Read README.md in Ares-Nguyen/Order-App
+Read README.md in octocat/Hello-World
 Get content of src/index.ts on branch develop
 ```
 
@@ -749,7 +749,7 @@ Search for code in a repository.
 **Usage:**
 
 ```
-Search for "useState" in Ares-Nguyen/Order-App
+Search for "useState" in octocat/Hello-World
 Search for "export default" in src folder
 ```
 
@@ -771,7 +771,7 @@ List releases.
 **Usage:**
 
 ```
-List releases in Ares-Nguyen/Order-App
+List releases in octocat/Hello-World
 Show latest 5 releases
 ```
 
@@ -818,7 +818,7 @@ List GitHub Actions workflows.
 **Usage:**
 
 ```
-List workflows in Ares-Nguyen/Order-App
+List workflows in octocat/Hello-World
 Show all GitHub Actions
 ```
 
@@ -867,7 +867,7 @@ Get all GitHub Projects v2 linked to a repository, including their fields and op
 **Usage:**
 
 ```
-Get all projects in Kinatico/kup-project-management
+Get all projects in my-org/my-project
 Show all projects with their fields in my-org/my-repo
 ```
 
@@ -898,7 +898,7 @@ Get project items of an issue, including item ID and current field values.
 **Usage:**
 
 ```
-Get project items of issue #123 in Kinatico/kup-project-management
+Get project items of issue #123 in my-org/my-project
 Get project info for issue #456
 ```
 
@@ -948,7 +948,7 @@ Update project item field with project_id PVT_xxx, item_id PVTI_xxx, field_id PV
 **Usage:**
 
 ```
-Update status of issue #123 to "In QA - Dev" in project Kinatico/kup-project-management
+Update status of issue #123 to "In QA - Dev" in project my-org/my-project
 Update status of issue #456 to "Done"
 Change status of issue #789 to "In Progress" in project #2
 ```
@@ -965,7 +965,7 @@ Change status of issue #789 to "In Progress" in project #2
 **Real Example:**
 
 ```
-Move status of issue #42 to "In QA - Dev" in Kinatico/kup-project-management
+Move status of issue #42 to "In QA - Dev" in my-org/my-project
 ```
 
 **Note:**
@@ -983,7 +983,7 @@ Update a NUMBER field value on a GitHub Project v2 item (e.g., Estimate).
 **Usage:**
 
 ```
-Update Estimate of issue #8 to 5 in project Ares-Nguyen/Order-App
+Update Estimate of issue #8 to 5 in project octocat/Hello-World
 Set estimate to 8 for project item
 ```
 
@@ -1029,7 +1029,7 @@ Set target date to 2024-12-31 for project item
 You don't need to remember exact tool names. Just describe what you want to do:
 
 ```
-I want to see issues assigned to Ares-Nguyen with status In Progress
+I want to see issues assigned to octocat with status In Progress
 ```
 
 ### 2. Combine Multiple Actions
@@ -1043,14 +1043,14 @@ Create branch feature/new-login from main, then create file src/Login.tsx with b
 The AI remembers context from previous prompts:
 
 ```
-List issues in Ares-Nguyen/Order-App
+List issues in octocat/Hello-World
 Close issue #1 we just listed
 ```
 
 ### 4. Advanced Filters
 
 ```
-Get issues of @Ares-Nguyen with label "bug" and status "In Progress" in the project
+Get issues of @octocat with label "bug" and status "In Progress" in the project
 ```
 
 ---

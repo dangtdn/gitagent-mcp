@@ -37,16 +37,16 @@
     "issues",
     "pull-requests"
   ],
-  "author": "Ares-Nguyen",
+  "author": "dangtdn",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ares-Nguyen/GitAgent-Manager.git"
+    "url": "git+https://github.com/dangtdn/gitagent-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/Ares-Nguyen/GitAgent-Manager/issues"
+    "url": "https://github.com/dangtdn/gitagent-mcp/issues"
   },
-  "homepage": "https://github.com/Ares-Nguyen/GitAgent-Manager#readme",
+  "homepage": "https://github.com/dangtdn/gitagent-mcp#readme",
   "engines": {
     "node": ">=18.0.0"
   },
