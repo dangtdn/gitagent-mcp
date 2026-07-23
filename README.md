@@ -5,6 +5,34 @@
 [![npm version](https://badge.fury.io/js/@dangtdn%2Fgitagent-mcp-server.svg)](https://www.npmjs.com/package/@dangtdn/gitagent-mcp-server)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## 🎯 Why GitAgent MCP?
+
+Compared to the official GitHub MCP server, **GitAgent MCP** is a native Node.js-based, feature-rich alternative designed specifically for advanced development workflows and automated project management.
+
+### 🌟 Key Highlights & Benefits
+
+* 🚀 **Massive Toolset (45 Tools)**: Covers everything from repository management, issues, PRs, commits, branches, releases, GitHub Actions workflows, to Projects v2. *(Official server only has 26 tools)*.
+* 📦 **No Docker Required**: Runs natively on Windows, macOS, or Linux using standard Node.js/NPM. Perfect for lightweight IDE environments where running Docker is not preferred or possible.
+* 🗂️ **GitHub Projects v2 Integration**: The only MCP server that provides full read/write access to GitHub Projects v2 custom fields (Status, Priority, Size, Estimate, Dates, etc.).
+* ⚙️ **CI/CD & Release Automation**: Directly list workflows, trigger GitHub Actions pipelines, and manage releases through AI commands.
+* ⏱️ **Development Analytics**: Retrieve commits from PRs and linked development info to analyze issue resolution times and developer activity.
+
+### 👥 Who is it for?
+
+* **Developers**: Who want AI coding assistants (like Cursor, VS Code, Claude Desktop, Antigravity) to perform direct Git operations (branching, file diffing, creating PRs, reading content) without leaving the editor.
+* **Tech Leads & PMs**: Who want to automate issue tracking, status updates, or generate release notes directly by prompting their AI assistant.
+* **DevOps Engineers**: Who want to check pipeline statuses or trigger deployments right from the chat interface.
+
+### ❓ When to use?
+
+* **Use GitAgent MCP if**:
+  * You need integration with **GitHub Projects v2** or **GitHub Actions**.
+  * You want a **lightweight, native Node.js** setup without installing Docker Desktop.
+  * You want deep analytical insights into development progress (linked PRs, commit statistics).
+* **Use Official GitHub MCP if**:
+  * You need to perform massive file commits in a single action (`push_files`).
+  * You need to search for GitHub users globally (`search_users`).
+
 ## 🌟 Features
 
 - ✅ **Full GitHub Integration** - Issues, Pull Requests, Branches, Commits, Files
