@@ -1,5 +1,5 @@
 {
-  "name": "@gitagent/gitagent-mcp-server",
+  "name": "@dangtdn/gitagent-mcp-server",
   "version": "1.0.0",
   "type": "module",
   "description": "MCP Server for GitAgent Manager - Connect your GitHub repositories to AI editors like Cursor, VS Code, Antigravity, and more",
@@ -13,6 +13,9 @@
     "GUIDE.md",
     "LICENSE"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "node node_modules/typescript/bin/tsc",
     "start": "node dist/index.js",

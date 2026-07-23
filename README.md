@@ -1,7 +1,8 @@
-# @gitagent/gitagent-mcp-server
+# @dangtdn/gitagent-mcp-server
 
 🚀 **MCP Server for GitAgent Manager** - Connect your GitHub repositories to AI editors like Cursor, VS Code, Claude Desktop, Antigravity, and more.
 
+[![npm version](https://badge.fury.io/js/@dangtdn%2Fgitagent-mcp-server.svg)](https://www.npmjs.com/package/@dangtdn/gitagent-mcp-server)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🌟 Features
@@ -14,21 +15,31 @@
 
 ## 📦 Installation
 
-### Option 1: Global Installation via GitHub Tarball (Recommended)
+### Option 1: On-demand Execution (Recommended)
 
-You can install the package globally directly using the GitHub repository archive:
+You can run the server directly using `npx` without installing it globally. This guarantees you are always running the latest version:
 
-```bash
-npm install -g https://github.com/dangtdn/gitagent-mcp/archive/refs/heads/main.tar.gz
+```json
+{
+  "mcpServers": {
+    "gitagent": {
+      "command": "npx",
+      "args": ["-y", "@dangtdn/gitagent-mcp-server"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_your_github_token_here"
+      }
+    }
+  }
+}
 ```
 
-This will register the global command `gitagent-mcp` on your system.
+### Option 2: Global Installation
 
-> 💡 **Tip (Updating):** To update to the latest version, run the command with the `--force` flag to bypass any NPM caching:
->
-> ```bash
-> npm install -g --force https://github.com/dangtdn/gitagent-mcp/archive/refs/heads/main.tar.gz
-> ```
+If you prefer to install it globally on your system:
+
+```bash
+npm install -g @dangtdn/gitagent-mcp-server
+```
 
 #### Configure in your editor:
 
@@ -46,7 +57,12 @@ This will register the global command `gitagent-mcp` on your system.
 }
 ```
 
-### Option 2: Local Installation (Clone & Build)
+> 💡 **Tip (Updating):** To update the global installation to the latest version, run:
+> ```bash
+> npm install -g @dangtdn/gitagent-mcp-server@latest
+> ```
+
+### Option 3: Local Installation (Clone & Build)
 
 If you prefer to run it locally from a cloned directory:
 
