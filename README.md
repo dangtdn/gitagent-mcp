@@ -14,15 +14,15 @@
 
 ## 📦 Installation
 
-### Option 1: Global Installation via GitHub (Recommended)
+### Option 1: Global Installation via GitHub Tarball (Recommended)
 
-You can install the package globally directly from the GitHub repository:
+You can install the package globally directly using the GitHub repository archive:
 
 ```bash
-npm install -g git+https://github.com/dangtdn/gitagent-mcp.git
+npm install -g https://github.com/dangtdn/gitagent-mcp/archive/refs/heads/main.tar.gz
 ```
 
-This will automatically build the server and register the global command `gitagent-mcp`.
+This will register the global command `gitagent-mcp` on your system.
 
 #### Configure in your editor:
 
