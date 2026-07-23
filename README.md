@@ -117,7 +117,7 @@ If you prefer to run it locally from a cloned directory:
 
 > 📖 **Read the detailed usage guide:** [GUIDE.md](GUIDE.md)
 
-### Read Operations (23 tools)
+### Read Operations (24 tools)
 
 | Tool                              | Description                                                        |
 | --------------------------------- | ------------------------------------------------------------------ |
@@ -138,6 +138,7 @@ If you prefer to run it locally from a cloned directory:
 | `list_commits`                    | List commits in a repository                                       |
 | `get_file_content`                | Get content of a file from repository                              |
 | `search_code`                     | Search for code in a repository                                    |
+| `search_issues`                   | **NEW** Search for issues and pull requests across repositories    |
 | `get_diff`                        | Compare two commits/branches/tags and get the diff                 |
 | `list_releases`                   | List releases in a repository                                      |
 | `list_workflows`                  | List GitHub Actions workflows                                      |

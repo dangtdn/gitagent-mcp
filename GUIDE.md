@@ -215,6 +215,27 @@ Show issues assigned to @dev with project status Done
 | projectStatus | string | ❌ | Filter by project status (e.g., "In Progress") |
 | first | number | ❌ | Number of issues to fetch (default: 50) |
 
+### `search_issues`
+
+Search for issues and pull requests across GitHub repositories using GitHub's advanced search query syntax.
+
+**Usage:**
+
+```
+Search open bug issues: "is:issue is:open label:bug"
+Search PRs created by octocat: "is:pr author:octocat"
+Search issues with "database error" in my-org/my-project: "repo:my-org/my-project database error"
+```
+
+**Parameters:**
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| q | string | ✅ | The search query using GitHub search syntax |
+| sort | string | ❌ | Sort field (`comments`, `reactions`, `reactions-+1`, `reactions--1`, `reactions-smile`, `reactions-thinking_face`, `reactions-heart`, `reactions-tada`, `interactions`, `created`, `updated`) |
+| order | "asc" / "desc" | ❌ | Sort order |
+| page | number | ❌ | Page number (default: 1) |
+| per_page | number | ❌ | Items per page (max 100, default: 30) |
+
 ---
 
 ### `list_issue_comments`

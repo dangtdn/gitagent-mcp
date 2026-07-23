@@ -914,4 +914,82 @@ export function registerIssueTools(server: McpServer) {
       }
     }
   );
+
+  // Tool: Search Issues
+  server.registerTool(
+    "search_issues",
+    {
+      title: "Search Issues",
+      description: "Search for issues and pull requests across GitHub repositories",
+      inputSchema: {
+        q: z
+          .string()
+          .describe(
+            "The search query using GitHub search syntax (e.g., 'repo:owner/repo is:issue is:open label:bug')"
+          ),
+        sort: z
+          .enum([
+            "comments",
+            "reactions",
+            "reactions-+1",
+            "reactions--1",
+            "reactions-smile",
+            "reactions-thinking_face",
+            "reactions-heart",
+            "reactions-tada",
+            "interactions",
+            "created",
+            "updated",
+          ])
+          .optional()
+          .describe("Sort field"),
+        order: z.enum(["asc", "desc"]).optional().describe("Sort order"),
+        page: z.number().optional().describe("Page number (default: 1)"),
+        per_page: z
+          .number()
+          .optional()
+          .describe("Items per page (max 100, default: 30)"),
+      },
+    },
+    async ({ q, sort, order, page = 1, per_page = 30 }) => {
+      const octokit = getOctokit();
+      if (!octokit) {
+        return formatAuthError("Error: GitHub not authenticated");
+      }
+      try {
+        const response = await octokit.search.issuesAndPullRequests({
+          q,
+          sort,
+          order,
+          page,
+          per_page,
+        });
+
+        const items = response.data.items.map((item) => ({
+          number: item.number,
+          title: item.title,
+          state: item.state,
+          html_url: item.html_url,
+          body: item.body,
+          user: item.user?.login,
+          labels: item.labels.map((l: any) =>
+            typeof l === "string" ? l : l.name
+          ),
+          assignees: item.assignees?.map((a) => a.login) || [],
+          created_at: item.created_at,
+          updated_at: item.updated_at,
+          pull_request: !!item.pull_request,
+        }));
+
+        return formatJsonContent({
+          total_count: response.data.total_count,
+          incomplete_results: response.data.incomplete_results,
+          items,
+        });
+      } catch (error: any) {
+        return formatError(error);
+      }
+    }
+  );
 }
+
