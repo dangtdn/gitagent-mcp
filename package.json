@@ -15,7 +15,6 @@
   ],
   "scripts": {
     "build": "node node_modules/typescript/bin/tsc",
-    "prepare": "npm run build",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "dev:http": "tsx src/http-server.ts",
