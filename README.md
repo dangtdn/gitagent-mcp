@@ -2,7 +2,6 @@
 
 🚀 **MCP Server for GitAgent Manager** - Connect your GitHub repositories to AI editors like Cursor, VS Code, Claude Desktop, Antigravity, and more.
 
-[![npm version](https://badge.fury.io/js/@gitagent%2Fgitagent-mcp-server.svg)](https://www.npmjs.com/package/@gitagent/gitagent-mcp-server)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🌟 Features
@@ -15,48 +14,63 @@
 
 ## 📦 Installation
 
-### Option 1: Via npm (Recommended)
+### Option 1: Global Installation via GitHub (Recommended)
+
+You can install the package globally directly from the GitHub repository:
 
 ```bash
-npm install -g @gitagent/gitagent-mcp-server
+npm install -g git+https://github.com/dangtdn/gitagent-mcp.git
 ```
 
-### Option 2: Via npx (No installation)
+This will automatically build the server and register the global command `gitagent-mcp`.
 
-```bash
-npx @gitagent/gitagent-mcp-server
+#### Configure in your editor:
+
+```json
+{
+  "mcpServers": {
+    "gitagent": {
+      "command": "gitagent-mcp",
+      "args": [],
+      "env": {
+        "GITHUB_TOKEN": "ghp_your_github_token_here"
+      }
+    }
+  }
+}
 ```
 
-### Option 3: Manual Installation (Share folder)
+### Option 2: Local Installation (Clone & Build)
 
-Nếu bạn không muốn dùng npm, có thể cài đặt thủ công:
+If you prefer to run it locally from a cloned directory:
 
-1. **Download/Copy folder `gitagent-mcp-server`** từ người share hoặc clone từ GitHub:
+1. **Clone the repository:**
 
    ```bash
-   Giải nén folder gitagent-mcp-server và mở terminal tại thư mục đó
+   git clone https://github.com/dangtdn/gitagent-mcp.git
+   cd gitagent-mcp
    ```
 
-2. **Cài đặt dependencies:**
+2. **Install dependencies:**
 
    ```bash
    npm install
    ```
 
-3. **Build project:**
+3. **Build the project:**
 
    ```bash
    npm run build
    ```
 
-4. **Cấu hình trong editor** (sử dụng đường dẫn tuyệt đối):
+4. **Configure in your editor** (using absolute path to `dist/index.js`):
 
    ```json
    {
      "mcpServers": {
        "gitagent": {
          "command": "node",
-         "args": ["C:/path/to/gitagent-mcp-server/dist/index.js"],
+         "args": ["C:/path/to/gitagent-mcp/dist/index.js"],
          "env": {
            "GITHUB_TOKEN": "ghp_your_github_token_here"
          }
@@ -65,7 +79,7 @@ Nếu bạn không muốn dùng npm, có thể cài đặt thủ công:
    }
    ```
 
-   > **Lưu ý:** Thay `C:/path/to/gitagent-mcp-server` bằng đường dẫn thực tế đến folder gitagent-mcp-server trên máy bạn.
+   > **Note:** Replace `C:/path/to/gitagent-mcp` with the actual path to the cloned folder on your machine.
 
 ## 🔧 Configuration
 
@@ -78,7 +92,7 @@ Nếu bạn không muốn dùng npm, có thể cài đặt thủ công:
 
 ## 🛠️ Available Tools (44 tools)
 
-> 📖 **Xem hướng dẫn chi tiết:** [GUIDE.md](GUIDE.md)
+> 📖 **Read the detailed usage guide:** [GUIDE.md](GUIDE.md)
 
 ### Read Operations (23 tools)
 

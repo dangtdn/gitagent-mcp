@@ -1,10 +1,10 @@
 # 📚 GitAgent MCP Server - Usage Guide
 
-Hướng dẫn chi tiết cách sử dụng tất cả 44 tools trong GitAgent MCP Server.
+Detailed guide on how to use all 44 tools in the GitAgent MCP Server.
 
 ---
 
-## 📋 Mục Lục
+## 📋 Table of Contents
 
 1. [Repository Tools](#1-repository-tools)
 2. [Issue Tools](#2-issue-tools)
@@ -23,39 +23,39 @@ Hướng dẫn chi tiết cách sử dụng tất cả 44 tools trong GitAgent M
 
 ### `list_repositories`
 
-Liệt kê tất cả repositories mà bạn có quyền truy cập.
+List all repositories that you have access to.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Liệt kê tất cả repositories của tôi
+List all my repositories
 Show my repositories
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| page | number | ❌ | Số trang (mặc định: 1) |
-| perPage | number | ❌ | Số items mỗi trang (mặc định: 30) |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| page | number | ❌ | Page number (default: 1) |
+| perPage | number | ❌ | Items per page (default: 30) |
 
 ---
 
 ### `get_repository`
 
-Xem thông tin chi tiết của một repository.
+Get detailed information about a repository.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xem thông tin repo Ares-Nguyen/Order-App
+Get repository info for Ares-Nguyen/Order-App
 Get repository info for Kinatico/kup-project-management
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
 
 ---
 
@@ -63,239 +63,239 @@ Get repository info for Kinatico/kup-project-management
 
 ### `list_issues`
 
-Liệt kê issues trong repository với các bộ lọc.
+List issues in a repository with filters.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Liệt kê issues đang mở trong Ares-Nguyen/Order-App
+List open issues in Ares-Nguyen/Order-App
 Show closed issues with label "bug" in my-org/my-repo
 List issues assigned to @username
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| state | "open" / "closed" / "all" | ❌ | Trạng thái (mặc định: open) |
-| labels | string | ❌ | Labels (phân cách bằng dấu phẩy) |
-| assignee | string | ❌ | Lọc theo assignee |
-| per_page | number | ❌ | Số items mỗi trang |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| state | "open" / "closed" / "all" | ❌ | Issue state (default: open) |
+| labels | string | ❌ | Labels (comma-separated) |
+| assignee | string | ❌ | Filter by assignee |
+| per_page | number | ❌ | Items per page |
 
 ---
 
 ### `get_issue`
 
-Xem chi tiết một issue.
+Get detailed information about a specific issue.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xem chi tiết issue #123 trong Ares-Nguyen/Order-App
+Get details of issue #123 in Ares-Nguyen/Order-App
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue number |
 
 ---
 
 ### `create_issue`
 
-Tạo issue mới.
+Create a new issue.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Tạo issue mới với title "Fix login bug" trong Ares-Nguyen/Order-App
+Create a new issue with title "Fix login bug" in Ares-Nguyen/Order-App
 Create issue "Add dark mode" with label "enhancement" and assign to @developer
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| title | string | ✅ | Tiêu đề issue |
-| body | string | ❌ | Nội dung chi tiết |
-| labels | string[] | ❌ | Danh sách labels |
-| assignees | string[] | ❌ | Danh sách assignees |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| title | string | ✅ | Issue title |
+| body | string | ❌ | Detailed description/body |
+| labels | string[] | ❌ | List of labels |
+| assignees | string[] | ❌ | List of assignees |
 
 ---
 
 ### `update_issue`
 
-Cập nhật issue.
+Update an existing issue.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Cập nhật title issue #123 thành "New Title"
+Update title of issue #123 to "New Title"
 Update issue #456 to add label "priority"
 Assign issue #789 to @developer
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue |
-| title | string | ❌ | Tiêu đề mới |
-| body | string | ❌ | Nội dung mới |
-| state | "open" / "closed" | ❌ | Trạng thái mới |
-| labels | string[] | ❌ | Labels mới |
-| assignees | string[] | ❌ | Assignees mới |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue number |
+| title | string | ❌ | New title |
+| body | string | ❌ | New description/body |
+| state | "open" / "closed" | ❌ | New state |
+| labels | string[] | ❌ | New labels |
+| assignees | string[] | ❌ | New assignees |
 
 ---
 
 ### `close_issue`
 
-Đóng issue.
+Close an issue.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Đóng issue #123 với lý do completed
+Close issue #123 with reason completed
 Close issue #456 as not_planned
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue |
-| state_reason | "completed" / "not_planned" | ❌ | Lý do đóng |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue number |
+| state_reason | "completed" / "not_planned" | ❌ | Reason for closing |
 
 ---
 
 ### `add_issue_comment`
 
-Thêm comment vào issue.
+Add a comment to an issue.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Thêm comment "Đã fix xong" vào issue #123
+Add comment "Fixed" to issue #123
 Add comment to PR #456: "LGTM, approved!"
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue hoặc PR |
-| body | string | ✅ | Nội dung comment |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue or PR number |
+| body | string | ✅ | Comment text |
 
 ---
 
 ### `list_issues_with_project_fields`
 
-Liệt kê issues với thông tin Project Fields (Status, Priority, Size...).
+List issues with GitHub Project v2 field values (Status, Priority, Size...).
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Lấy issues của Ares-Nguyen với status In Progress trong Kinatico/kup-project-management
+Get issues of Ares-Nguyen with status In Progress in Kinatico/kup-project-management
 Show issues assigned to @dev with project status Done
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| assignee | string | ✅ | Lọc theo assignee |
-| projectStatus | string | ❌ | Lọc theo status (e.g., "In Progress") |
-| first | number | ❌ | Số issues cần lấy (mặc định: 50) |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| assignee | string | ✅ | Filter by assignee |
+| projectStatus | string | ❌ | Filter by project status (e.g., "In Progress") |
+| first | number | ❌ | Number of issues to fetch (default: 50) |
 
 ---
 
 ### `list_issue_comments`
 
-Liệt kê tất cả comments trong một issue hoặc PR.
+List all comments on an issue or PR.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Liệt kê comments của issue #123 trong Ares-Nguyen/Order-App
+List comments of issue #123 in Ares-Nguyen/Order-App
 List comments on PR #45
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue hoặc PR |
-| per_page | number | ❌ | Số items mỗi trang (mặc định: 30) |
-| page | number | ❌ | Số trang (mặc định: 1) |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue or PR number |
+| per_page | number | ❌ | Items per page (default: 30) |
+| page | number | ❌ | Page number (default: 1) |
 
 ---
 
 ### `get_issue_comment`
 
-Xem chi tiết một comment cụ thể theo comment_id.
+Get detailed information about a specific comment by comment_id.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xem chi tiết comment #987654321 trong Ares-Nguyen/Order-App
+Get details of comment #987654321 in Ares-Nguyen/Order-App
 Get issue comment details for comment_id 123456
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| comment_id | number | ✅ | ID của comment |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| comment_id | number | ✅ | Comment ID |
 
 ---
 
 ### `get_issue_linked_prs`
 
-Lấy danh sách các Pull Requests được liên kết trong mục Development của issue.
+Get the list of Pull Requests linked in the Development section of the issue.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Lấy các PRs được link với issue #123 trong Ares-Nguyen/Order-App
+Get PRs linked with issue #123 in Ares-Nguyen/Order-App
 Get linked PRs for issue #456
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue number |
 
 ---
 
 ### `get_issue_development_info`
 
-Lấy thông tin chi tiết về các linked PRs kèm danh sách commits của chúng để phân tích thời gian và tiến độ thực hiện issue.
+Get detailed development information for an issue, including all linked PRs and their commits for time and progress analysis.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xem thông tin development và commits của issue #123
+Get development info and commits for issue #123
 Get development info and commits for issue #456
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue number |
 
 ---
 
@@ -303,43 +303,43 @@ Get development info and commits for issue #456
 
 ### `add_labels`
 
-Thêm labels vào issue hoặc PR.
+Add labels to an issue or PR.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Thêm label "bug" và "priority" vào issue #123
+Add labels "bug" and "priority" to issue #123
 Add labels ["enhancement", "frontend"] to PR #456
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue/PR |
-| labels | string[] | ✅ | Danh sách labels cần thêm |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue or PR number |
+| labels | string[] | ✅ | List of labels to add |
 
 ---
 
 ### `remove_labels`
 
-Xóa label khỏi issue hoặc PR.
+Remove a label from an issue or PR.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xóa label "wontfix" khỏi issue #123
+Remove label "wontfix" from issue #123
 Remove label "needs-review" from PR #456
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue/PR |
-| name | string | ✅ | Tên label cần xóa |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue or PR number |
+| name | string | ✅ | Label name to remove |
 
 ---
 
@@ -347,118 +347,118 @@ Remove label "needs-review" from PR #456
 
 ### `list_pull_requests`
 
-Liệt kê pull requests.
+List pull requests.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Liệt kê PRs đang mở trong my-org/my-repo
+List open PRs in my-org/my-repo
 Show all closed PRs
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| state | "open" / "closed" / "all" | ❌ | Trạng thái |
-| per_page | number | ❌ | Số items mỗi trang |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| state | "open" / "closed" / "all" | ❌ | PR state filter |
+| per_page | number | ❌ | Items per page |
 
 ---
 
 ### `get_pull_request`
 
-Xem chi tiết một PR.
+Get detailed information about a PR.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xem chi tiết PR #42
+Get details of PR #42
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| pull_number | number | ✅ | Số PR |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| pull_number | number | ✅ | PR number |
 
 ---
 
 ### `create_pull_request`
 
-Tạo pull request mới.
+Create a new pull request.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Tạo PR từ branch feature/new-login vào main
+Create PR from branch feature/new-login to main
 Create PR "Add dark mode" from feature-branch to develop
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| title | string | ✅ | Tiêu đề PR |
-| head | string | ✅ | Branch nguồn (có changes) |
-| base | string | ✅ | Branch đích (merge vào) |
-| body | string | ❌ | Mô tả PR |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| title | string | ✅ | PR title |
+| head | string | ✅ | Source branch (with changes) |
+| base | string | ✅ | Target branch (to merge into) |
+| body | string | ❌ | PR description/body |
 
 ---
 
 ### `update_pull_request`
 
-Cập nhật pull request.
+Update an existing pull request.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Cập nhật title PR #42 thành "New Feature"
+Update title of PR #42 to "New Feature"
 Change base branch of PR #42 to develop
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| pull_number | number | ✅ | Số PR |
-| title | string | ❌ | Tiêu đề mới |
-| body | string | ❌ | Mô tả mới |
-| state | "open" / "closed" | ❌ | Trạng thái mới |
-| base | string | ❌ | Branch đích mới |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| pull_number | number | ✅ | PR number |
+| title | string | ❌ | New title |
+| body | string | ❌ | New description/body |
+| state | "open" / "closed" | ❌ | New state |
+| base | string | ❌ | New target branch |
 
 ---
 
 ### `request_reviewers`
 
-Yêu cầu reviewer cho PR.
+Request reviewers for a PR.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Yêu cầu @reviewer1 và @reviewer2 review PR #42
+Request review from @reviewer1 and @reviewer2 for PR #42
 Request review from team "frontend-team" for PR #42
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| pull_number | number | ✅ | Số PR |
-| reviewers | string[] | ❌ | Danh sách usernames |
-| team_reviewers | string[] | ❌ | Danh sách team slugs |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| pull_number | number | ✅ | PR number |
+| reviewers | string[] | ❌ | List of reviewer usernames |
+| team_reviewers | string[] | ❌ | List of team slugs |
 
 ---
 
 ### `merge_pull_request`
 
-Merge pull request.
+Merge a pull request.
 
-**Cách dùng:**
+**Usage:**
 
 ```
 Merge PR #42 using squash
@@ -466,74 +466,74 @@ Merge PR #42 with rebase
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| pull_number | number | ✅ | Số PR |
-| commit_title | string | ❌ | Tiêu đề commit |
-| commit_message | string | ❌ | Message commit |
-| merge_method | "merge" / "squash" / "rebase" | ❌ | Phương thức merge |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| pull_number | number | ✅ | PR number |
+| commit_title | string | ❌ | Commit title |
+| commit_message | string | ❌ | Commit message |
+| merge_method | "merge" / "squash" / "rebase" | ❌ | Merge method |
 
 ---
 
 ### `get_pr_files`
 
-Xem danh sách files thay đổi trong PR.
+Get the list of files changed in a PR.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xem files thay đổi trong PR #42
+Get files changed in PR #42
 Show changed files in PR #42
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| pull_number | number | ✅ | Số PR |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| pull_number | number | ✅ | PR number |
 
 ---
 
 ### `get_pr_reviews`
 
-Xem reviews của PR.
+Get reviews of a PR.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xem reviews của PR #42
+Get reviews for PR #42
 Get all reviews for PR #42
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| pull_number | number | ✅ | Số PR |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| pull_number | number | ✅ | PR number |
 
 ---
 
 ### `get_pr_commits`
 
-Lấy danh sách tất cả các commit thuộc một Pull Request (bao gồm SHA, message, author, date).
+Get the list of all commits belonging to a Pull Request (including SHA, message, author, date).
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xem tất cả commits trong PR #42
+Get all commits in PR #42
 Get all commits from PR #100
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| pull_number | number | ✅ | Số PR |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| pull_number | number | ✅ | PR number |
 
 ---
 
@@ -541,61 +541,61 @@ Get all commits from PR #100
 
 ### `list_branches`
 
-Liệt kê branches.
+List branches in a repository.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Liệt kê branches trong Ares-Nguyen/Order-App
+List branches in Ares-Nguyen/Order-App
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
 
 ---
 
 ### `create_branch`
 
-Tạo branch mới.
+Create a new branch.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Tạo branch feature/new-login từ main
+Create branch feature/new-login from main
 Create branch hotfix/fix-bug from develop
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| branch_name | string | ✅ | Tên branch mới |
-| from_branch | string | ❌ | Branch nguồn |
-| from_sha | string | ❌ | SHA commit nguồn |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| branch_name | string | ✅ | New branch name |
+| from_branch | string | ❌ | Source branch |
+| from_sha | string | ❌ | Source commit SHA |
 
 ---
 
 ### `delete_branch`
 
-Xóa branch.
+Delete a branch.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xóa branch feature/old-feature
+Delete branch feature/old-feature
 Delete branch hotfix/merged
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| branch_name | string | ✅ | Tên branch cần xóa |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| branch_name | string | ✅ | Name of branch to delete |
 
 ---
 
@@ -603,54 +603,54 @@ Delete branch hotfix/merged
 
 ### `list_commits`
 
-Liệt kê commits.
+List commits.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Liệt kê 10 commits gần nhất trong Ares-Nguyen/Order-App
+List the latest 10 commits in Ares-Nguyen/Order-App
 Show commits on feature branch
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| sha | string | ❌ | Branch hoặc SHA |
-| per_page | number | ❌ | Số items (mặc định: 20) |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| sha | string | ❌ | Branch name or commit SHA |
+| per_page | number | ❌ | Number of items (default: 20) |
 
 ---
 
 ### `get_diff`
 
-So sánh 2 commits, branches, hoặc tags và lấy diff chi tiết.
+Compare two commits, branches, or tags and get the detailed diff.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-So sánh branch main với develop trong Ares-Nguyen/Order-App
+Compare branch main with develop in Ares-Nguyen/Order-App
 Get diff between v1.0.0 and v1.1.0
 Compare commit abc123 with def456
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
 | base | string | ✅ | Base commit/branch/tag (e.g., 'main', 'v1.0.0') |
-| head | string | ✅ | Head commit/branch/tag để so sánh |
-| include_files | boolean | ❌ | Bao gồm chi tiết files (mặc định: true) |
+| head | string | ✅ | Head commit/branch/tag to compare |
+| include_files | boolean | ❌ | Include file details (default: true) |
 
-**Response bao gồm:**
+**Response Includes:**
 
 - `status`: ahead, behind, diverged, identical
-- `ahead_by`, `behind_by`: Số commits ahead/behind
-- `total_commits`: Tổng số commits khác biệt
-- `commits`: Danh sách commits (tối đa 10)
-- `files_summary`: Tổng additions/deletions
-- `files`: Chi tiết từng file thay đổi với patch
+- `ahead_by`, `behind_by`: Number of commits ahead/behind
+- `total_commits`: Total number of differing commits
+- `commits`: List of commits (max 10)
+- `files_summary`: Total additions/deletions
+- `files`: Detailed changes per file with patches
 
 ---
 
@@ -658,107 +658,107 @@ Compare commit abc123 with def456
 
 ### `get_file_content`
 
-Đọc nội dung file.
+Read file content.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Đọc file README.md trong Ares-Nguyen/Order-App
+Read README.md in Ares-Nguyen/Order-App
 Get content of src/index.ts on branch develop
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| path | string | ✅ | Đường dẫn file |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| path | string | ✅ | File path |
 | ref | string | ❌ | Branch/tag/sha |
 
 ---
 
 ### `create_file`
 
-Tạo file mới trong repository.
+Create a new file in the repository.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Tạo file src/new-component.tsx với nội dung "export default function NewComponent() {}"
+Create src/new-component.tsx with content "export default function NewComponent() {}"
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| path | string | ✅ | Đường dẫn file |
-| content | string | ✅ | Nội dung file |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| path | string | ✅ | File path |
+| content | string | ✅ | File content |
 | message | string | ✅ | Commit message |
-| branch | string | ❌ | Branch đích |
+| branch | string | ❌ | Target branch |
 
 ---
 
 ### `update_file`
 
-Cập nhật file trong repository.
+Update an existing file in the repository.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Cập nhật file README.md với nội dung mới
+Update README.md with new content
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| path | string | ✅ | Đường dẫn file |
-| content | string | ✅ | Nội dung mới |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| path | string | ✅ | File path |
+| content | string | ✅ | New content |
 | message | string | ✅ | Commit message |
-| branch | string | ❌ | Branch đích |
+| branch | string | ❌ | Target branch |
 
 ---
 
 ### `delete_file`
 
-Xóa file trong repository.
+Delete a file from the repository.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Xóa file old-file.txt với message "Remove deprecated file"
+Delete old-file.txt with message "Remove deprecated file"
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| path | string | ✅ | Đường dẫn file |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| path | string | ✅ | File path |
 | message | string | ✅ | Commit message |
-| branch | string | ❌ | Branch đích |
+| branch | string | ❌ | Target branch |
 
 ---
 
 ### `search_code`
 
-Tìm kiếm code trong repository.
+Search for code in a repository.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Tìm "useState" trong Ares-Nguyen/Order-App
+Search for "useState" in Ares-Nguyen/Order-App
 Search for "export default" in src folder
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| query | string | ✅ | Từ khóa tìm kiếm |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| query | string | ✅ | Search query |
 
 ---
 
@@ -766,46 +766,46 @@ Search for "export default" in src folder
 
 ### `list_releases`
 
-Liệt kê releases.
+List releases.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Liệt kê releases trong Ares-Nguyen/Order-App
+List releases in Ares-Nguyen/Order-App
 Show latest 5 releases
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| per_page | number | ❌ | Số items (mặc định: 10) |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| per_page | number | ❌ | Items count (default: 10) |
 
 ---
 
 ### `create_release`
 
-Tạo release mới.
+Create a new release.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Tạo release v1.0.0 với title "First Release"
+Create release v1.0.0 with title "First Release"
 Create pre-release v2.0.0-beta
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
 | tag_name | string | ✅ | Tag name (e.g., v1.0.0) |
-| name | string | ❌ | Tên release |
+| name | string | ❌ | Release name |
 | body | string | ❌ | Release notes |
-| draft | boolean | ❌ | Tạo draft |
-| prerelease | boolean | ❌ | Đánh dấu pre-release |
-| target_commitish | string | ❌ | Branch/SHA đích |
+| draft | boolean | ❌ | Create as draft |
+| prerelease | boolean | ❌ | Mark as pre-release |
+| target_commitish | string | ❌ | Target branch or commit SHA |
 
 ---
 
@@ -813,28 +813,28 @@ Create pre-release v2.0.0-beta
 
 ### `list_workflows`
 
-Liệt kê GitHub Actions workflows.
+List GitHub Actions workflows.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Liệt kê workflows trong Ares-Nguyen/Order-App
+List workflows in Ares-Nguyen/Order-App
 Show all GitHub Actions
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
 
 ---
 
 ### `trigger_workflow`
 
-Chạy GitHub Actions workflow.
+Trigger a GitHub Actions workflow.
 
-**Cách dùng:**
+**Usage:**
 
 ```
 Trigger workflow deploy.yml on branch main
@@ -842,12 +842,12 @@ Run CI workflow on develop branch
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| workflow_id | string/number | ✅ | Workflow ID hoặc filename |
-| ref | string | ✅ | Branch hoặc tag |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| workflow_id | string/number | ✅ | Workflow ID or filename |
+| ref | string | ✅ | Branch or tag |
 | inputs | object | ❌ | Workflow inputs |
 
 ---
@@ -856,211 +856,211 @@ Run CI workflow on develop branch
 
 ### `list_issues_with_project_fields`
 
-_(Đã mô tả ở phần Issue Tools)_
+_(Described in the Issue Tools section)_
 
 ---
 
 ### `get_repository_projects`
 
-Lấy danh sách tất cả GitHub Projects v2 được liên kết với repository, bao gồm thông tin về fields và options.
+Get all GitHub Projects v2 linked to a repository, including their fields and options.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Lấy danh sách projects trong Kinatico/kup-project-management
+Get all projects in Kinatico/kup-project-management
 Show all projects with their fields in my-org/my-repo
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
 
-**Response bao gồm:**
+**Response Includes:**
 
-- `id`: Node ID của project (PVT\_...)
-- `title`: Tên project
-- `number`: Số project
-- `url`: URL project
-- `fields`: Danh sách fields với:
-  - `id`: Node ID của field
-  - `name`: Tên field (ví dụ: "Status", "Priority")
-  - `dataType`: Loại field
-  - `options`: Các options cho single-select fields (với id và name)
+- `id`: Project Node ID (PVT\_...)
+- `title`: Project name
+- `number`: Project number
+- `url`: Project URL
+- `fields`: List of fields with:
+  - `id`: Field Node ID
+  - `name`: Field name (e.g., "Status", "Priority")
+  - `dataType`: Field type
+  - `options`: Options for single-select fields (with id and name)
 
 ---
 
 ### `get_issue_project_items`
 
-Lấy thông tin project items của một issue, bao gồm item ID và giá trị các fields hiện tại.
+Get project items of an issue, including item ID and current field values.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Lấy project items của issue #123 trong Kinatico/kup-project-management
+Get project items of issue #123 in Kinatico/kup-project-management
 Get project info for issue #456
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue number |
 
-**Response bao gồm:**
+**Response Includes:**
 
-- `issue`: Thông tin issue (id, number, title)
-- `projectItems`: Danh sách project items với:
-  - `itemId`: Node ID của item (PVTI\_...) - **cần dùng cho update**
-  - `project`: Thông tin project (id, title, number)
-  - `fieldValues`: Các giá trị field hiện tại
+- `issue`: Issue info (id, number, title)
+- `projectItems`: List of project items with:
+  - `itemId`: Project item Node ID (PVTI\_...) - **needed for updates**
+  - `project`: Project info (id, title, number)
+  - `fieldValues`: Current field values
 
 ---
 
 ### `update_project_item_field`
 
-Update giá trị của một field trong GitHub Project v2 item. Dùng cho single-select fields như Status, Priority.
+Update a field value on a GitHub Project v2 item. Used for single-select fields like Status, Priority.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Update project item field với project_id PVT_xxx, item_id PVTI_xxx, field_id PVTSSF_xxx, option_id xxx
+Update project item field with project_id PVT_xxx, item_id PVTI_xxx, field_id PVTSSF_xxx, option_id xxx
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| project*id | string | ✅ | Node ID của project (PVT*...) |
-| item*id | string | ✅ | Node ID của project item (PVTI*...) |
-| field*id | string | ✅ | Node ID của field (PVTF*... or PVTSSF\_...) |
-| option_id | string | ✅ | Node ID của option muốn set |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| project_id | string | ✅ | Project Node ID (PVT_...) |
+| item_id | string | ✅ | Project item Node ID (PVTI_...) |
+| field_id | string | ✅ | Field Node ID (PVTF_... or PVTSSF_...) |
+| option_id | string | ✅ | Node ID of single-select option to set |
 
-**Lưu ý:** Cần lấy các IDs bằng cách sử dụng `get_repository_projects` và `get_issue_project_items` trước.
+**Note:** You must first obtain the IDs using `get_repository_projects` and `get_issue_project_items`.
 
 ---
 
 ### `update_issue_project_status` ⭐ (Recommended)
 
-**Tool tiện lợi để update Status của issue trong GitHub Project.** Tự động tìm project, field, và option IDs.
+**Convenience tool to update status of an issue in a GitHub Project.** Automatically finds project, field, and option IDs.
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Cập nhật status issue #123 thành "In QA - Dev" trong project của Kinatico/kup-project-management
+Update status of issue #123 to "In QA - Dev" in project Kinatico/kup-project-management
 Update status of issue #456 to "Done"
-Change issue #789 status to "In Progress" in project #2
+Change status of issue #789 to "In Progress" in project #2
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| owner | string | ✅ | Chủ repository |
-| repo | string | ✅ | Tên repository |
-| issue_number | number | ✅ | Số issue |
-| project_number | number | ❌ | Số project (không bắt buộc nếu issue chỉ thuộc 1 project) |
-| status | string | ✅ | Tên status mới (ví dụ: "In Progress", "Done", "In QA - Dev") |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| owner | string | ✅ | Repository owner |
+| repo | string | ✅ | Repository name |
+| issue_number | number | ✅ | Issue number |
+| project_number | number | ❌ | Project number (optional if issue is in only one project) |
+| status | string | ✅ | New status name (e.g., "In Progress", "Done", "In QA - Dev") |
 
-**Ví dụ thực tế:**
+**Real Example:**
 
 ```
-Chuyển status issue #42 sang "In QA - Dev" trong Kinatico/kup-project-management
+Move status of issue #42 to "In QA - Dev" in Kinatico/kup-project-management
 ```
 
-**Lưu ý:**
+**Note:**
 
-- Tool sẽ tự động tìm Status field trong project
-- Nếu status không tồn tại, tool sẽ hiển thị danh sách các status có sẵn
-- Case-insensitive khi so sánh status name
+- Tool will automatically search for the "Status" field in the project.
+- If status does not exist, the tool displays a list of available options.
+- Comparison of status names is case-insensitive.
 
 ---
 
 ### `update_project_item_number`
 
-Update giá trị của một NUMBER field trong GitHub Project v2 item (ví dụ: Estimate).
+Update a NUMBER field value on a GitHub Project v2 item (e.g., Estimate).
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Update Estimate của issue #8 thành 5 trong project Ares-Nguyen/Order-App
+Update Estimate of issue #8 to 5 in project Ares-Nguyen/Order-App
 Set estimate to 8 for project item
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| project*id | string | ✅ | Node ID của project (PVT*...) |
-| item*id | string | ✅ | Node ID của project item (PVTI*...) |
-| field*id | string | ✅ | Node ID của number field (PVTF*...) |
-| value | number | ✅ | Giá trị số cần set |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| project_id | string | ✅ | Project Node ID (PVT_...) |
+| item_id | string | ✅ | Project item Node ID (PVTI_...) |
+| field_id | string | ✅ | Number field Node ID (PVTF_...) |
+| value | number | ✅ | Number value to set |
 
-**Lưu ý:** Cần lấy các IDs bằng cách sử dụng `get_repository_projects` và `get_issue_project_items` trước.
+**Note:** You must first obtain the IDs using `get_repository_projects` and `get_issue_project_items`.
 
 ---
 
 ### `update_project_item_date`
 
-Update giá trị của một DATE field trong GitHub Project v2 item (ví dụ: Start date, Target date).
+Update a DATE field value on a GitHub Project v2 item (e.g., Start date, Target date).
 
-**Cách dùng:**
+**Usage:**
 
 ```
-Update Start date của issue #8 thành 2024-12-23
+Update Start date of issue #8 to 2024-12-23
 Set target date to 2024-12-31 for project item
 ```
 
 **Parameters:**
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| project*id | string | ✅ | Node ID của project (PVT*...) |
-| item*id | string | ✅ | Node ID của project item (PVTI*...) |
-| field*id | string | ✅ | Node ID của date field (PVTF*...) |
-| date | string | ✅ | Ngày theo định dạng ISO 8601 (YYYY-MM-DD), ví dụ: "2024-12-25" |
+| Parameter | Type | Required | Description |
+|---------|------|----------|-------------|
+| project_id | string | ✅ | Project Node ID (PVT_...) |
+| item_id | string | ✅ | Project item Node ID (PVTI_...) |
+| field_id | string | ✅ | Date field Node ID (PVTF_...) |
+| date | string | ✅ | Date in ISO 8601 format (YYYY-MM-DD), e.g., "2024-12-25" |
 
-**Lưu ý:** Cần lấy các IDs bằng cách sử dụng `get_repository_projects` và `get_issue_project_items` trước.
+**Note:** You must first obtain the IDs using `get_repository_projects` and `get_issue_project_items`.
 
 ---
 
 ## 💡 Tips & Best Practices
 
-### 1. Sử dụng ngôn ngữ tự nhiên
+### 1. Use Natural Language
 
-Bạn không cần nhớ chính xác tên tool. Chỉ cần mô tả những gì bạn muốn làm:
-
-```
-Tôi muốn xem các issues đang được assign cho Ares-Nguyen với status In Progress
-```
-
-### 2. Kết hợp nhiều thao tác
+You don't need to remember exact tool names. Just describe what you want to do:
 
 ```
-Tạo branch feature/new-login từ main, sau đó tạo file src/Login.tsx với nội dung cơ bản
+I want to see issues assigned to Ares-Nguyen with status In Progress
 ```
 
-### 3. Sử dụng context
-
-AI sẽ nhớ context từ các câu hỏi trước:
+### 2. Combine Multiple Actions
 
 ```
-Liệt kê issues trong Ares-Nguyen/Order-App
-Đóng issue #1 vừa liệt kê
+Create branch feature/new-login from main, then create file src/Login.tsx with basic content
 ```
 
-### 4. Filters nâng cao
+### 3. Use Context
+
+The AI remembers context from previous prompts:
 
 ```
-Lấy issues của @Ares-Nguyen với label "bug" có status "In Progress" trong project
+List issues in Ares-Nguyen/Order-App
+Close issue #1 we just listed
+```
+
+### 4. Advanced Filters
+
+```
+Get issues of @Ares-Nguyen with label "bug" and status "In Progress" in the project
 ```
 
 ---
 
-## ⚠️ Lưu ý quan trọng
+## ⚠️ Important Notes
 
-1. **GitHub Token**: Đảm bảo token có đủ quyền (scopes: `repo`, `read:user`, `workflow`)
-2. **Rate Limiting**: GitHub có giới hạn requests, tránh gọi quá nhiều lần
-3. **Write Operations**: Cẩn thận với các thao tác write (delete, update)
-4. **Private Repos**: Cần token với quyền truy cập private repos
+1. **GitHub Token**: Ensure your token has enough permissions (scopes: `repo`, `read:user`, `workflow`).
+2. **Rate Limiting**: GitHub has API request limits; avoid calling tools excessively.
+3. **Write Operations**: Be careful with write operations (delete, update).
+4. **Private Repos**: A token with private repo access is required.
 
 ---
 
