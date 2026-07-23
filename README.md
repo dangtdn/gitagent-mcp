@@ -24,7 +24,8 @@ npm install -g https://github.com/dangtdn/gitagent-mcp/archive/refs/heads/main.t
 
 This will register the global command `gitagent-mcp` on your system.
 
-> 💡 **Tip (Updating):** To update to the latest version in the future, run the command with the `--force` flag to bypass any NPM caching:
+> 💡 **Tip (Updating):** To update to the latest version, run the command with the `--force` flag to bypass any NPM caching:
+>
 > ```bash
 > npm install -g --force https://github.com/dangtdn/gitagent-mcp/archive/refs/heads/main.tar.gz
 > ```
