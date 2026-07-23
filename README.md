@@ -58,6 +58,7 @@ npm install -g @dangtdn/gitagent-mcp-server
 ```
 
 > 💡 **Tip (Updating):** To update the global installation to the latest version, run:
+>
 > ```bash
 > npm install -g @dangtdn/gitagent-mcp-server@latest
 > ```
@@ -205,14 +206,14 @@ Get issues with GitHub Project v2 field values:
 ```json
 {
   "total": 1,
-  "filter": { "assignee": "Ares-Nguyen", "projectStatus": "In Progress" },
+  "filter": { "assignee": "John", "projectStatus": "In Progress" },
   "issues": [
     {
       "number": 949,
       "title": "Universal Search - Handling No Results",
-      "assignees": ["Ares-Nguyen"],
+      "assignees": ["John"],
       "projectFields": {
-        "KUP CX": {
+        "Project-1": {
           "Status": "In Progress",
           "Priority": "P1",
           "Size": "L",
