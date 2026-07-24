@@ -1,8 +1,8 @@
-# @dangtdn/gitagent-mcp-server
+# gitagent-mcp-server
 
 🚀 **MCP Server for GitAgent Manager** - Connect your GitHub repositories to AI editors like Cursor, VS Code, Claude Desktop, Antigravity, and more.
 
-[![npm version](https://badge.fury.io/js/@dangtdn%2Fgitagent-mcp-server.svg)](https://www.npmjs.com/package/@dangtdn/gitagent-mcp-server)
+[![npm version](https://badge.fury.io/js/gitagent-mcp-server.svg)](https://www.npmjs.com/package/gitagent-mcp-server)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🎯 Why GitAgent MCP?
@@ -52,7 +52,7 @@ You can run the server directly using `npx` without installing it globally. This
   "mcpServers": {
     "gitagent": {
       "command": "npx",
-      "args": ["-y", "@dangtdn/gitagent-mcp-server"],
+      "args": ["-y", "gitagent-mcp-server"],
       "env": {
         "GITHUB_TOKEN": "ghp_your_github_token_here"
       }
@@ -66,7 +66,7 @@ You can run the server directly using `npx` without installing it globally. This
 If you prefer to install it globally on your system:
 
 ```bash
-npm install -g @dangtdn/gitagent-mcp-server
+npm install -g gitagent-mcp-server
 ```
 
 #### Configure in your editor:
@@ -88,7 +88,7 @@ npm install -g @dangtdn/gitagent-mcp-server
 > 💡 **Tip (Updating):** To update the global installation to the latest version, run:
 >
 > ```bash
-> npm install -g @dangtdn/gitagent-mcp-server@latest
+> npm install -g gitagent-mcp-server@latest
 > ```
 
 ### Option 3: Local Installation (Clone & Build)
